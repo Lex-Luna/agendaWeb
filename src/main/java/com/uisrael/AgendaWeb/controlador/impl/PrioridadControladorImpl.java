@@ -7,6 +7,7 @@ import com.uisrael.AgendaWeb.modelo.dao.PrioridadDao;
 import com.uisrael.AgendaWeb.modelo.dao.impl.PrioridadDaoImpl;
 import com.uisrael.AgendaWeb.modelo.entidades.Prioridad;
 
+
 public class PrioridadControladorImpl implements PrioridadControlador{
 	private PrioridadDao prioridadDao;
 	public PrioridadControladorImpl() {
@@ -50,46 +51,19 @@ public class PrioridadControladorImpl implements PrioridadControlador{
 		return encontrado;
 	}
 	@Override
-	public Prioridad buscarPrioridadAlta(int alta) {
+	public Prioridad buscarDescripcion(String descripcion) {
 		// TODO Auto-generated method stub
 		Prioridad encontrado=new Prioridad();
 		encontrado=null;
 		
 		try {
-			encontrado= prioridadDao.buscarPrioridadAlta(alta);
+			encontrado= prioridadDao.buscarDescripcion(descripcion);
 		} catch (Exception e) {
 			encontrado=null;
 			System.out.println("Error: " + e.getMessage());
 		}
 		return encontrado;
 	}
-	@Override
-	public Prioridad buscarPrioridadmedia(int media) {
-		// TODO Auto-generated method stub
-		Prioridad encontrado=new Prioridad();
-		encontrado=null;
-		
-		try {
-			encontrado= prioridadDao.buscarPrioridadmedia(media);
-		} catch (Exception e) {
-			encontrado=null;
-			System.out.println("Error: " + e.getMessage());
-		}
-		return encontrado;
-	}
-	@Override
-	public Prioridad buscarPrioridadBaja(int baja) {
-		// TODO Auto-generated method stub
-		Prioridad encontrado=new Prioridad();
-		encontrado=null;
-		
-		try {
-			encontrado= prioridadDao.buscarPrioridadBaja(baja);
-		} catch (Exception e) {
-			encontrado=null;
-			System.out.println("Error: " + e.getMessage());
-		}
-		return encontrado;
-	}
-
+	
+	
 }

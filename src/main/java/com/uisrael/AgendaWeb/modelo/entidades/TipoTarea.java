@@ -11,71 +11,55 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 @Entity
-public class Prioridad implements Serializable{
+public class TipoTarea implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idPrioridad;
+	private int idTipoTarea;
 	private String descripcion;
 	
-//	Relacion Prioridad con DetalleTarea
-	@OneToMany(mappedBy = "fkPrioridad", cascade = CascadeType.ALL)
+//	Relacion TipoTarea con DetalleTarea
+	@OneToMany(mappedBy = "fkTipoTarea", cascade = CascadeType.ALL)
 	private List<DetalleTarea> listaDetalleTarea = new ArrayList<DetalleTarea>();
 
-	public List<DetalleTarea> getListaDetalleTarea() {
-		return listaDetalleTarea;
+	public int getIdTipoTarea() {
+		return idTipoTarea;
 	}
 
-
-	public Prioridad() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setIdTipoTarea(int idTipoTarea) {
+		this.idTipoTarea = idTipoTarea;
 	}
-	
-	@Override
-	public String toString() {
-		return "Prioridad [idPrioridad=" + idPrioridad + ", descripcion=" + descripcion + ", listaDetalleTarea="
-				+ listaDetalleTarea + "]";
-	}
-
 
 	public String getDescripcion() {
 		return descripcion;
 	}
 
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
+	public List<DetalleTarea> getListaDetalleTarea() {
+		return listaDetalleTarea;
+	}
 
 	public void setListaDetalleTarea(List<DetalleTarea> listaDetalleTarea) {
 		this.listaDetalleTarea = listaDetalleTarea;
 	}
 
-
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
-
-
-
-
-	
-
-	public int getIdPrioridad() {
-		return idPrioridad;
+	@Override
+	public String toString() {
+		return "TipoTarea [idTipoTarea=" + idTipoTarea + ", descripcion=" + descripcion + ", listaDetalleTarea="
+				+ listaDetalleTarea + "]";
 	}
 
-	public void setIdPrioridad(int idPrioridad) {
-		this.idPrioridad = idPrioridad;
+	public TipoTarea() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
-
-	
-	
 	
 	
 }

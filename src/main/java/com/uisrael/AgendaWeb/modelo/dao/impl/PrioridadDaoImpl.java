@@ -6,9 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
-
 import com.uisrael.AgendaWeb.modelo.dao.PrioridadDao;
 import com.uisrael.AgendaWeb.modelo.entidades.Prioridad;
+
 
 
 public class PrioridadDaoImpl  implements PrioridadDao{
@@ -62,24 +62,12 @@ public class PrioridadDaoImpl  implements PrioridadDao{
 	}
 
 	@Override
-	public Prioridad buscarPrioridadAlta(int alta) {
+	public Prioridad buscarDescripcion(String descripcion) {
 		// TODO Auto-generated method stub
-		TypedQuery<Prioridad> query = em.createQuery("Select pri From Prioridad pri where pri.alta =" + alta, Prioridad.class);//'" + id + "'
+		TypedQuery<Prioridad> query = em.createQuery("Select pri From Prioridad pri where pri.descripcion ='" + descripcion +"'", Prioridad.class);//'" + nombre + "'
 		return query.getSingleResult();
 	}
 
-	@Override
-	public Prioridad buscarPrioridadmedia(int media) {
-		// TODO Auto-generated method stub
-		TypedQuery<Prioridad> query = em.createQuery("Select pri From Prioridad pri where pri.media =" + media, Prioridad.class);//'" + id + "'
-		return query.getSingleResult();
-	}
 
-	@Override
-	public Prioridad buscarPrioridadBaja(int baja) {
-		// TODO Auto-generated method stub
-		TypedQuery<Prioridad> query = em.createQuery("Select pri From Prioridad pri where pri.baja =" + baja, Prioridad.class);//'" + id + "'
-		return query.getSingleResult();
-	}
 
 }

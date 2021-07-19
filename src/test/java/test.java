@@ -3,10 +3,6 @@ import java.util.List;
 //import javax.xml.transform.Result;
 
 import org.junit.Test;
-
-import com.uisrael.AgendaWeb.controlador.CalendarioControlador;
-//import com.uisrael.AgendaWeb.controlador.CalendarioControlador;
-//import com.uisrael.AgendaWeb.controlador.CalendarioControlador;
 import com.uisrael.AgendaWeb.controlador.ClienteControlador;
 import com.uisrael.AgendaWeb.controlador.CuentaControlador;
 import com.uisrael.AgendaWeb.controlador.PrioridadControlador;
@@ -26,7 +22,7 @@ public class test {
 	private CuentaControlador cuentaControlador;
 	private TareaControlador tareaControlador;
 	private PrioridadControlador prioridadControlador;
-	private CalendarioControlador calendarioControlador;
+
 
 	@Test
 	public void test() {

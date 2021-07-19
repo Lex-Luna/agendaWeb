@@ -15,9 +15,5 @@ public interface PrioridadControlador {
 	
 	public Prioridad buscarPrioridadId(int id);
 	
-	public Prioridad buscarPrioridadAlta(int alta);
-	
-	public Prioridad buscarPrioridadmedia(int media);
-	
-	public Prioridad buscarPrioridadBaja(int baja);
+	public Prioridad buscarDescripcion(String descripcion);
 }

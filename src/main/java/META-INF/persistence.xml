@@ -6,11 +6,14 @@
 	<persistence-unit name="AgendaWeb_PU"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		
 		<class>com.uisrael.AgendaWeb.modelo.entidades.Cliente</class>
 		<class>com.uisrael.AgendaWeb.modelo.entidades.Cuenta</class>
-		<class>com.uisrael.AgendaWeb.modelo.entidades.Calendario</class>
 		<class>com.uisrael.AgendaWeb.modelo.entidades.Tarea</class>
 		<class>com.uisrael.AgendaWeb.modelo.entidades.Prioridad</class>
+		<class>com.uisrael.AgendaWeb.modelo.entidades.DetalleTarea</class>
+		<class>com.uisrael.AgendaWeb.modelo.entidades.TipoTarea</class>
+		
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:postgresql://localhost:5432/AgendaWeb" />

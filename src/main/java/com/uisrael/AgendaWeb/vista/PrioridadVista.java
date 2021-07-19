@@ -18,9 +18,8 @@ import com.uisrael.AgendaWeb.modelo.entidades.Prioridad;
 @ViewScoped
 public class PrioridadVista  implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private int alta;
-	private int media;
-	private int baja;
+	private String descripcion;
+
 	private PrioridadControlador prioridadControlador;
 	private Prioridad nuevoPrioridad, prioridadSeleccionado;
 
@@ -36,9 +35,8 @@ public class PrioridadVista  implements Serializable{
 	}
 	public void insertarPrioridad() {
 		nuevoPrioridad = new Prioridad();
-		nuevoPrioridad.setMedia(media);
-		nuevoPrioridad.setBaja(baja);
-		nuevoPrioridad.setAlta(alta);
+		nuevoPrioridad.setDescripcion(descripcion);
+
 		prioridadControlador.insertarPrioridad(nuevoPrioridad);
 	}
 	public void listarPrioridads() {
@@ -65,24 +63,7 @@ public class PrioridadVista  implements Serializable{
 		showInfoDelete();
 		
 	}
-	public int getAlta() {
-		return alta;
-	}
-	public void setAlta(int alta) {
-		this.alta = alta;
-	}
-	public int getMedia() {
-		return media;
-	}
-	public void setMedia(int media) {
-		this.media = media;
-	}
-	public int getBaja() {
-		return baja;
-	}
-	public void setBaja(int baja) {
-		this.baja = baja;
-	}
+	
 	public PrioridadControlador getPrioridadControlador() {
 		return prioridadControlador;
 	}
