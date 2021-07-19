@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Agenda Web :)</title>
+</h:head>
+<h:body>
+<h1>Tarea</h1>
+<p:panel id= "ingresoTarea" header="Ingreso Tarea"  style="margin-bottom:20px">
+	
+	<h:panelGrid columns="2">
+		 
+		<p:outputLabel>Titulo</p:outputLabel>
+		<p:inputText value="#{titulo}"></p:inputText>
+		
+		<p:outputLabel>Descripcion</p:outputLabel>
+		<p:inputText value="#{descripcion}"></p:inputText>
+		
+		<p:outputLabel>Fecha Inicio</p:outputLabel>
+		<p:inputText value="#{fechaInicio}"></p:inputText>
+		
+		<p:outputLabel>Fecha Limite</p:outputLabel>
+		<p:inputText value="#{fechaLimite}"></p:inputText>
+		
+	</h:panelGrid>
+	</p:panel>
+</h:body>
+</html>

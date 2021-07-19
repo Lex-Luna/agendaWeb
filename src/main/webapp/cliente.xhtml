@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Agenda Web :)</title>
+</h:head>
+<h:body>
+	<h:form id="frmCliente">
+		<h1>Cliente</h1>
+		<p:growl id="mensaje" showDetail="true">
+		</p:growl>
+		<p:commandButton value="Nuevo Cliente" icon="pi pi-plus"
+			update="frmCliente:cliente" oncomplete="PF('clienteDialogo').show()"
+			styleClass="ui-button-success" style="margin-rigth: .5rem">
+		</p:commandButton>
+
+
+		<p:panel id="panelCliente" header="Cliente"
+			style="margin-bottom:20px">
+
+
+			<div class="card">
+				<p:dataTable id="cliente" var="cli"
+					value="#{clienteVista.listaClientes}"
+					selection="#{clienteVista.clienteSeleccionado}"
+					rowKey="#{cli.idCliente}" paginator="true" rows="5"
+					rowSelectMode="add" paginatorPosition="bottom">
+
+					<p:column headerText="Nombres" sortBy="#{cli.nombres}"
+						filterBy="#{cli.nombres}">
+						<h:outputText value="#{cli.nombres}" />
+					</p:column>
+
+					<p:column headerText="Apellidos" sortBy="#{cli.apellido}"
+						filterBy="#{cli.apellido}">
+						<h:outputText value="#{cli.apellido}" />
+					</p:column>
+
+					<p:column headerText="Teléfono" sortBy="#{cli.telefono}"
+						filterBy="#{cli.telefono}">
+						<h:outputText value="#{cli.telefono}" />
+					</p:column>
+
+					<p:column headerText="Email" sortBy="#{cli.email}"
+						filterBy="#{cli.email}">
+						<h:outputText value="#{cli.email}" />
+					</p:column>
+
+
+
+				</p:dataTable>
+			</div>
+
+		</p:panel>
+		<p:dialog header="Cliente" showEffect="fade" modal="true"
+			widgetVar="clienteDialogo" responsive="true">
+			<h:panelGrid columns="2">
+
+				<p:outputLabel value="Nombre"></p:outputLabel>
+				<p:inputText value="#{clienteVista.nombres}"></p:inputText>
+
+				<p:outputLabel value="Apellido"></p:outputLabel>
+				<p:inputText value="#{clienteVista.apellido}"></p:inputText>
+
+				<p:outputLabel value="Email"></p:outputLabel>
+				<p:inputText value="#{clienteVista.email}"></p:inputText>
+
+				<p:outputLabel value="Telefono"></p:outputLabel>
+				<p:inputText value="#{clienteVista.telefono}"></p:inputText>
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+				<f:facet name="footer">
+
+					<p:commandButton value="Guardar" icon="pi pi-check"
+						action="#{clienteVista.insertarCliente}" >
+					</p:commandButton>
+
+					<p:commandButton value="Cancelar" icon="pi pi-times"
+						onclick="PF('clienteDialogo').hide()" class="ui-button-secondary">
+					</p:commandButton>
+
+				</f:facet>
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

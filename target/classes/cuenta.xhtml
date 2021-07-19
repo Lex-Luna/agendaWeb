@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Agenda Web :)</title>
+</h:head>
+<h:body>
+	<h:form id="frmCuenta">
+		<h1>Cuenta</h1>
+		<p:panel id="ingresoCuenta" header="Ingreso Cuenta"
+			style="margin-bottom:20px">
+
+			<h:panelGrid columns="2">
+
+				<p:outputLabel value="Usuario">Usuario</p:outputLabel>
+				<p:inputText value="#{cuentaVista.usuario}"></p:inputText>
+
+				<p:outputLabel value="Contraseña">Contraseña</p:outputLabel>
+				<p:inputText value="#{cuentaVista.contraseña}"></p:inputText>
+
+
+			</h:panelGrid>
+			<p:commandButton value="Insertar" action="#{cuentaVista.insertarCuenta}"></p:commandButton>
+			<p:commandButton value="CANCELAR"></p:commandButton>
+		</p:panel>
+		<div class="card">
+			<p:dataTable id="Cuentas" var="Cuentas"
+				value="#{cuentaVista.listaCuentas}"
+				selection="#{cuentaVista.cuentaSeleccionado}"
+				rowKey="#{cuentas.idCuenta}" paginator="true" rows="5"
+				rowSelectMode="add" paginatorPosition="bottom">
+				<p:column headerText="Usuario">
+					<h:outputText value="#{cuentaVista.usuario}" />
+				</p:column>
+
+				<p:column headerText="COntraseña">
+					<h:outputText value="#{cuentaVista.contraseña}" />
+			</p:dataTable>
+		</div>
+	</h:form>
+</h:body>
+</html>

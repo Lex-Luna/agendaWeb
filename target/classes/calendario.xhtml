@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Agenda Web :)</title>
+</h:head>
+<h:body>
+	<h1>Calendario</h1>
+	<p:panel id="ingresoCalendario" header="Ingreso Calendario"
+		style="margin-bottom:20px">
+		<h:form id="frmcalendario">
+			<h:panelGrid columns="2">
+
+				<p:outputLabel value="Dia">Dia</p:outputLabel>
+				<p:inputText value="#{calendarioVista.dia}"></p:inputText>
+
+				<p:outputLabel value="Mes">Mes</p:outputLabel>
+				<p:inputText value="#{calendarioVista.mes}"></p:inputText>
+
+				<p:outputLabel value="Año">Año</p:outputLabel>
+				<p:inputText value="#{calendarioVista.año}"></p:inputText>
+			</h:panelGrid>
+	</p:panel>
+	<p:commandButton value="Insertar"
+		action="#{calendarioVista.insertarCalendario}"></p:commandButton>
+	<p:commandButton value="CANCELAR"></p:commandButton>
+	
+	<div class="card">
+			<p:dataTable id="calendarios" var="calendarios"
+				value="#{calendarioVista.listaCalendarios}"
+				selection="#{calendarioVista.calendarioSeleccionado}"
+				rowKey="#{calendarios.idcalendario}" paginator="true" rows="5"
+				rowSelectMode="add" paginatorPosition="bottom">
+
+				<p:column headerText="Dia">
+					<h:outputText value="#{calendarioVista.dia}" />
+				</p:column>
+
+				<p:column headerText="Mes">
+					<h:outputText value="#{calendarioVista.mes}" />
+				</p:column>
+
+				<p:column headerText="Año">
+					<h:outputText value="#{calendarioVista.año}" />
+				</p:column>
+
+
+			</p:dataTable>
+		</div>
+			<
+</h:form>
+</h:body>
+</html>
